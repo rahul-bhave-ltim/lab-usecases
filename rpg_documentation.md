@@ -67,4 +67,45 @@ example, if you define a file called MYFILE, you may later use /DEFINE to define
 and you may also use /UNDEFINE to remove condition name MYFILE. This has no effect on the file name
 MYFILE.
 Conditional compile names can be up to 50 characters long.
+
+###### Data Structure Names...............................................................................................................
+
+```
+A data structure is an area in storage and is considered to be a character field.
+```
+###### EXCEPT Names..........................................................................................................................
+
+```
+An EXCEPT name is a symbolic name assigned to an exception output record. The following additional
+rule applies to EXCEPT names:
+```
+- The same EXCEPT name can be assigned to more than one output record.
+
+###### Field Names...............................................................................................................................
+
+```
+The following additional rules apply to field names:
+```
+- A field name can be defined more than once if each definition using that name has the same data type,
+    the same length, and the same number of decimal positions. All definitions using the same name refer
+    to a single field (that is, the same area in storage). However, it can be defined only once on the definition
+    specification.
+- A field can be defined as a data structure subfield only once unless the data structure is qualified
+    (defined with QUALIFIED or LIKEDS). In this case, when the subfield is used, it must be qualified
+    (specified in the form _dsname_. _subfieldname_ ).
+- A subfield name cannot be specified as the result field on an *ENTRY PLIST parameter.
+
+###### KLIST Names.............................................................................................................................
+
+```
+A KLIST name is a symbolic name assigned to a list of key fields.
+```
+###### Labels.........................................................................................................................................
+
+```
+A label is a symbolic name that identifies a specific location in a program (for example, the name assigned
+to a TAG or ENDSR operation).
+```
+```
+Symbolic Names
 ```
